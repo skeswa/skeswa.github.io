@@ -1,0 +1,88 @@
+.tabloid {
+  display: table;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.transition {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.visible {
+  visibility: visible!important;
+}
+
+.concealed {
+  visibility: hidden;
+}
+
+@mixin delay($time) {
+  animation-delay: $time;
+  -webkit-animation-delay: $time;
+  -moz-animation-delay: $time;
+  -o-animation-delay: $time;
+  ms-animation-delay: $time;
+}
+
+@mixin duration($time) {
+  animation-duration: $time;
+  -webkit-animation-duration: $time;
+  -moz-animation-duration: $time;
+  -o-animation-duration: $time;
+  ms-animation-duration: $time;
+}
+
+@mixin cover($image) {
+  background: url('/images/#{$image}') no-repeat center center scroll;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/#{$image}', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/#{$image}', sizingMethod='scale')";
+}
+
+.underlined {
+  padding-bottom: 1px;
+  border-bottom-width: 1.5px;
+  border-bottom-style: solid;
+}
+
+.heart {
+  margin: 0 5px;
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:before { content: "\f004"; }
+}
+
+.dash {
+  height: 1px;
+  width: 30px;
+  background: black;
+  margin: 20px auto;
+
+  @extend .tabloid;
+}
+
+.dots {
+  @extend .tabloid;
+  margin: 20px auto 30px;
+
+  i {
+    margin-right: 10px;
+    font-size: 0.7em;
+    color: darken(whitesmoke, 5%);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

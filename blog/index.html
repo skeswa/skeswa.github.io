@@ -1,0 +1,15 @@
+---
+layout: blog
+title: Blog | Peter Tóth &#183; web developer
+---
+
+{% for post in site.posts %}
+  <div class="post">
+    <h1 class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+
+    <div class="date">
+      <i class="fa fa-calendar-o"></i> {{ post.date | date: "%-d %B %Y" }}
+    </div>
+    {{ post.content }}
+  </div>
+{% endfor %}
