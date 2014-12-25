@@ -1,14 +1,14 @@
 # Site settings
-author: Peter Toth
-title: Peter Tóth | web developer
-email: peter@petertoth.me
-description: Peter Toth - Personal website & blog about web development mainly in Ruby on Rails
-keywords: peter, toth, web, development, design, programming, code, coding, rails, ruby, css, sass, stylesheet, javascript, blog, github
+author: Sandile Keswa
+title: Sandile Keswa | fullstack developer
+email: me@sandile.io
+description: Sandile Keswa's personal website and blog
+keywords: sandile, keswa, web, development, software, programming, code, coding, rust, js, css, golang, blog, github, mobile, android
 baseurl: ""
 root: /
-url: "http://petertoth.me"
-twitter_username: yednorozec
-github_username:  petertoth
+url: "http://www.sandile.io"
+twitter_username: skeswa
+github_username:  skeswa
 
 # Build settings
 markdown: kramdown
