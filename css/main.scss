@@ -16,8 +16,8 @@
   background: lightgray;
 }
 
-html, body { 
-  height: 100%; 
+html, body {
+  height: 100%;
 }
 
 body, section, h1, h2, h3, h4 {
@@ -61,13 +61,13 @@ code {
     margin-bottom: 30px;
     color: gray;
   }
-  
+
   ul {
     list-style: none;
 
     display: table;
     margin: 0 auto;
-    
+
     li {
       display: inline-block;
       min-width: 50px;
@@ -136,7 +136,7 @@ mark {
   padding: 0.5em;
 }
 
-pre { 
+pre {
   font-size: 18px;
   padding: 1.5em 1em;
   border-radius: 0;

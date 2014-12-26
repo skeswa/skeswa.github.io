@@ -24,7 +24,7 @@
       text-transform: uppercase;
       padding: 10px 8px;
       font-size: 15px;
-      
+
       a {
         color: white;
       }
@@ -46,6 +46,8 @@
     &:before {
       font-family: Flaticon, sans-serif;
       content: "\e142";
+      color: white;
+      text-shadow: 1px 1px 10px #000000;
     }
 
     &:after {
@@ -71,7 +73,7 @@
     }
 
     &:hover {
-      color: shade(gray, 20%);
+      color: tint(gray, 20%);
       cursor: pointer;
     }
   }
@@ -91,9 +93,7 @@
   h1 {
     letter-spacing: 0.7em;
     font-size: 2.1em;
-    text-shadow: 1px 1px 10px #3B3B3B;
-    font-weight: 300;
-    background: rgba(1, 1, 1, 0.1);
+    text-shadow: 1px 1px 10px #000000;
     padding: 0.3em;
     color: white;
     padding-left: 1em;
@@ -121,7 +121,7 @@
   width: 100%;
   height: 100%;
   position: relative;
-  @include cover('mountain.jpg');
+  @include cover('coffee.jpg');
 
   text-align: center;
   overflow: hidden;
@@ -135,7 +135,7 @@
     @extend .tabloid;
 
     text-align: center;
-    color: #D3D3D3; 
+    color: #D3D3D3;
 
     div {
       font-size: 0.9em;
@@ -163,6 +163,8 @@
   background: whitesmoke;
 
   .profile-pic {
+    width: 200px;
+    height: 200px;
   }
 
   h1 {
@@ -221,7 +223,7 @@
   .bold {
     font-weight: 600;
   }
-  
+
   a {
     color: black;
     padding-bottom: 2px;
@@ -293,7 +295,7 @@ $lightgray: tint(#848484, 20%);
     margin-top: 0;
     font-size: 1.7em;
 
-    a { 
+    a {
       color: inherit;
 
       &:hover { color: shade($lightgray, 20%); }
@@ -404,7 +406,7 @@ $lightgray: tint(#848484, 20%);
     font-weight: 300;
     letter-spacing: 1px;
     margin: 30px auto 35px;
-    max-width: 500px; 
+    max-width: 500px;
 
     @extend .tabloid;
   }
@@ -482,12 +484,12 @@ $lightgray: tint(#848484, 20%);
   h4 {
     margin-bottom: 25px;
   }
-  
+
   ul {
     list-style: none;
 
     @extend .tabloid;
-    
+
     li {
       display: inline-block;
       min-width: 50px;
