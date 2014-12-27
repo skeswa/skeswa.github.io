@@ -123,6 +123,8 @@
   position: relative;
   @include cover('coffee.jpg');
 
+  background-position-x: 0%;
+  background-position-y: 0%;
   text-align: center;
   overflow: hidden;
 
@@ -325,6 +327,11 @@ $lightgray: tint(#848484, 20%);
 
   .item {
     padding: 25px;
+
+    img {
+      width: 100%;
+      margin-bottom: 30px;
+    }
   }
 
   .item-1 {
@@ -520,9 +527,9 @@ $lightgray: tint(#848484, 20%);
     }
 
     .email:hover { a { color: #27ae60 } }
-    .github:hover { a { color: #4183c4 } }
-    .twitter:hover { a { color: #32CCFE } }
-    .codepen:hover { a { color: black } }
+    .github:hover { a { color: #222222; } }
+    .twitter:hover { a { color: #32CCFE; } }
+    .codepen:hover { a { color: #4183c4;} }
   }
 
   .dash {
