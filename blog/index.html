@@ -3,13 +3,17 @@ layout: blog
 title: Blog | Sandile Keswa
 ---
 
-{% for post in site.posts %}
-  <div class="post">
-    <h1 class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-
-    <div class="date">
-      <i class="fa fa-calendar-o"></i> {{ post.date | date: "%-d %B %Y" }}
-    </div>
-    {{ post.content }}
-  </div>
-{% endfor %}
+<div class="post-previews">
+    {% for post in site.posts limit:5 %}
+        <div class="post-preview">
+            <h1 class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+            <div class="date">Published on {{ post.date | date: "%B %-d, %Y" }}</div>
+            <div class="content-preview">
+                {{ post.content | split:'<!--break-->' | first }}
+                {% if post.content contains '<!--break-->' %}
+                    <a href="{{ post.url }}">read more</a>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

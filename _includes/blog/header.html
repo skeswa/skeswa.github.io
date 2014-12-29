@@ -1,16 +1,20 @@
 <section id="header">
   <div class="container">
     <div class="brand pull-left">
-      <h1><a href="{{ site.root }}"><span>Sandile</span> Keswa</a></h1>
+        <h1><a href="{{ site.root }}"><span>Sandile</span> Keswa</a></h1>
+        <div class="subtitle">Fullstack Software Developer</div>
+        <div class="social-media">
+            <a href="https://twitter.com/skeswa">@skeswa</a> //
+            <a href="https://github.com/skeswa">github.com/skeswa</a> //
+            <a href="mailto:me@sandile.io">me@sandile.io</a>
+        </div>
     </div>
-
-    <div class="navigation pull-right">
-      <ul>
-        <li><a href="{{ "blog" || prepend: site.root }}"><i class="flaticon-home60"></i>Home</a></li>
-        <li><a href="{{ "blog/archives" || prepend: site.root }}"><i class="flaticon-stack8"></i>Archives</a></li>
-      </ul>
+    <div class="nav pull-right">
+        <a href="{{ site.root }}">Home</a>
+        <a href="{{ "blog" || prepend: site.root }}">Blog</a>
+        <a href="{{ "blog/archives" || prepend: site.root }}">Archives</a>
     </div>
-
     <div class="clearfix"></div>
+    <div class="dash"></div>
   </div>
 </section>

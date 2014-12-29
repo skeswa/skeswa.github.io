@@ -9,8 +9,10 @@ keywords: exercism, code, skill, quality, feedback, nitpick, exercises, blog
 ---
 
 There are many ways how one can sharpen his coding & programming skills. However, peer review
-or just simple "putting it out there" is a very important aspect of a constant achievement of 
+or just simple "putting it out there" is a very important aspect of a constant achievement of
 better results.
+
+<!--break-->
 
 [exercism.io](http://exercism.io) is a crowd-sourced mentorship providing algorithmical exercises in
 <mark>Clojure, Coffeescript, Elixir, Go, Haskell, Javascript, Objective-C, Ocaml, Perl5, Python, Ruby and Scala.</mark>
@@ -18,7 +20,7 @@ better results.
 Installation
 ------------
 
-The process is very simple and straightforward. After signing in with your Github account and setting up the 
+The process is very simple and straightforward. After signing in with your Github account and setting up the
 [CLI](http://cli.exercism.io) you are almost ready to go.
 
 Note that exercism.io binary file will be placed in `/usr/local/bin` or `$HOME/bin` directory so make sure you got 'em
@@ -109,7 +111,7 @@ eternal perfection, submit the example. <br>
 When you think it is not the best you can do and there's something
 fishy about it but you can't seem to find the smoother way to solve the problem, submit the example.
 
-To do so, just : 
+To do so, just :
 {% highlight bash %}
 
 $ exercism submit path/to/exercise.ext
@@ -157,7 +159,7 @@ If you are done and you don't need any more feedback on your submission click *O
 fetch the next exercise by :
 
 {% highlight bash %}
-$ exercism fetch 
+$ exercism fetch
 {% endhighlight %}
 
 <hr>

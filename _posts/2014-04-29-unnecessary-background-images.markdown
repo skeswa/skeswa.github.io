@@ -13,6 +13,8 @@ I still do not understand why would somebody use background **image** containing
 just a plain color to appear *on hover*(not only) instead of just background color unless the author
 wants to enrich an element with some witty & fancy background.
 
+<!--break-->'
+
 I've seen this on numerous websites and one can not very easily detect it by
 noticing that `background-image` displays a little bit earlier than `background-color`.
 Somehow you can feel that subtle blink of an image as it appears.
