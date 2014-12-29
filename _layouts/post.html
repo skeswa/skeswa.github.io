@@ -7,7 +7,11 @@
             <div class="container">
                 <div class="post">
                     <h1 class="title">{{ page.title }}</h1>
-                    <div class="date">Published on {{ page.date | date: "%B %-d, %Y" }}</div>
+                    <div class="subtitle">
+                        <div class="date">Published on {{ page.date | date: "%B %-d, %Y" }}</div>
+                        <div id="share-button"></div>
+                        <div class="clearfix"></div>
+                    </div>
                     <div class="content">{{ content }}</div>
                 </div>
             </div>
@@ -16,5 +20,11 @@
             {% endif %}
         </div>
         {% include blog/footer.html %}
+
+        <script>
+            window.POST_TITLE = '{{ page.title }}';
+        </script>
+        <script src="{{ "/js/share.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/js/post.js" | prepend: site.baseurl }}"></script>
     </body>
 </html>

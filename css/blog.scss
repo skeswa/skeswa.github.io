@@ -115,15 +115,41 @@ pre {
         }
     }
 
-    .date {
+    .subtitle {
+        height: 37px;
+        margin-top: -10px;
         margin-bottom: 40px;
-        text-align: left;
-        color: #666666;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 16px;
-        font-weight: 700;
-        padding-left: 4px;
+
+        .date {
+            float: left;
+            text-align: left;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 16px;
+            font-weight: 700;
+            padding-left: 4px;
+            margin-top: 15px;
+        }
+
+        #share-button {
+            float: right;
+            color: white;
+            opacity: 0;
+            @include transition (opacity 500ms);
+
+            &.concealed {
+                visibility: hidden;
+            }
+
+            &.visible {
+                opacity: 1.0;
+            }
+
+            label {
+                color: white;
+            }
+        }
     }
 
     .content {
