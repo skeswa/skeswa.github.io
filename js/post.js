@@ -11,4 +11,6 @@ $(function() {
     setTimeout(function() {
         $('#share-button').addClass('visible');
     }, 1200);
+    // Highlight the code segments
+    hljs.initHighlightingOnLoad();
 });

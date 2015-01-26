@@ -13,6 +13,14 @@ html, body, h1, h2, h3, h4, h5, h6 {
 
 pre {
     font-size: 16px;
+    padding: 0px;
+    border: none;
+    margin: 20px 0px;
+
+    code,
+    code.hljs {
+        padding: 20px;
+    }
 }
 
 #header {
