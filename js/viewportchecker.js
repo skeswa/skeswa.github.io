@@ -1,79 +1,9 @@
-/*
-    Version 1.4.2
-    The MIT License (MIT)
+/**
+ * jQuery-viewport-checker - v1.8.8 - 2017-09-25
+ * https://github.com/dirkgroenen/jQuery-viewport-checker
+ *
+ * Copyright (c) 2017 Dirk Groenen
+ * Licensed MIT <https://github.com/dirkgroenen/jQuery-viewport-checker/blob/master/LICENSE>
+ */
 
-    Copyright (c) 2014 Dirk Groenen
-
-    Permission is hereby granted, free of charge, to any person obtaining a copy of
-    this software and associated documentation files (the "Software"), to deal in
-    the Software without restriction, including without limitation the rights to
-    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-    the Software, and to permit persons to whom the Software is furnished to do so,
-    subject to the following conditions:
-
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-*/
-
-(function($){
-    $.fn.viewportChecker = function(useroptions){
-        // Define options and extend with user
-        var options = {
-            classToAdd: 'visible',
-            offset: 100,
-            repeat: false,
-            callbackFunction: function(elem, action){}
-        };
-        $.extend(options, useroptions);
-
-        // Cache the given element and height of the browser
-        var $elem = this,
-            windowHeight = $(window).height(),
-            scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
-
-        this.checkElements = function(){
-        
-            // Set some vars to check with
-            var viewportTop = $(scrollElem).scrollTop(),
-                viewportBottom = (viewportTop + windowHeight);
-
-            $elem.each(function(){
-                var $obj = $(this);
-                // If class already exists; quit
-                if ($obj.hasClass(options.classToAdd) && !options.repeat){
-                    return;
-                }
-
-                // define the top position of the element and include the offset which makes is appear earlier or later
-                var elemTop = Math.round( $obj.offset().top ) + options.offset,
-                    elemBottom = elemTop + ($obj.height());
-
-                // Add class if in viewport
-                if ((elemTop < viewportBottom) && (elemBottom > viewportTop)){
-                    $obj.addClass(options.classToAdd);
-
-                    // Do the callback function. Callback wil send the jQuery object as parameter
-                    options.callbackFunction($obj, "add");
-                    
-                // Remove class if not in viewport and repeat is true
-                } else if ($obj.hasClass(options.classToAdd) && (options.repeat)){
-                    $obj.removeClass(options.classToAdd);
-
-                    // Do the callback function.
-                    options.callbackFunction($obj, "remove");
-                }
-            });
-        
-        };
-
-        // Run checkelements on load and scroll
-        $(window).bind("load scroll touchmove", this.checkElements);
-
-        // On resize change the height var
-        $(window).resize(function(e){
-            windowHeight = e.currentTarget.innerHeight;
-        });
-        
-        return this;
-    };
-})(jQuery);
+!function(a){a.fn.viewportChecker=function(b){var c={classToAdd:"visible",classToRemove:"invisible",classToAddForFullView:"full-visible",removeClassAfterAnimation:!1,offset:100,repeat:!1,invertBottomOffset:!0,callbackFunction:function(a,b){},scrollHorizontal:!1,scrollBox:window};a.extend(c,b);var d=this,e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()};return this.checkElements=function(){var b,f;c.scrollHorizontal?(b=Math.max(a("html").scrollLeft(),a("body").scrollLeft(),a(window).scrollLeft()),f=b+e.width):(b=Math.max(a("html").scrollTop(),a("body").scrollTop(),a(window).scrollTop()),f=b+e.height),d.each(function(){var d=a(this),g={},h={};if(d.data("vp-add-class")&&(h.classToAdd=d.data("vp-add-class")),d.data("vp-remove-class")&&(h.classToRemove=d.data("vp-remove-class")),d.data("vp-add-class-full-view")&&(h.classToAddForFullView=d.data("vp-add-class-full-view")),d.data("vp-keep-add-class")&&(h.removeClassAfterAnimation=d.data("vp-remove-after-animation")),d.data("vp-offset")&&(h.offset=d.data("vp-offset")),d.data("vp-repeat")&&(h.repeat=d.data("vp-repeat")),d.data("vp-scrollHorizontal")&&(h.scrollHorizontal=d.data("vp-scrollHorizontal")),d.data("vp-invertBottomOffset")&&(h.scrollHorizontal=d.data("vp-invertBottomOffset")),a.extend(g,c),a.extend(g,h),!d.data("vp-animated")||g.repeat){String(g.offset).indexOf("%")>0&&(g.offset=parseInt(g.offset)/100*e.height);var i=g.scrollHorizontal?d.offset().left:d.offset().top,j=g.scrollHorizontal?i+d.width():i+d.height(),k=Math.round(i)+g.offset,l=g.scrollHorizontal?k+d.width():k+d.height();g.invertBottomOffset&&(l-=2*g.offset),k<f&&l>b?(d.removeClass(g.classToRemove),d.addClass(g.classToAdd),g.callbackFunction(d,"add"),j<=f&&i>=b?d.addClass(g.classToAddForFullView):d.removeClass(g.classToAddForFullView),d.data("vp-animated",!0),g.removeClassAfterAnimation&&d.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){d.removeClass(g.classToAdd)})):d.hasClass(g.classToAdd)&&g.repeat&&(d.removeClass(g.classToAdd+" "+g.classToAddForFullView),g.callbackFunction(d,"remove"),d.data("vp-animated",!1))}})},("ontouchstart"in window||"onmsgesturechange"in window)&&a(document).bind("touchmove MSPointerMove pointermove",this.checkElements),a(c.scrollBox).bind("load scroll",this.checkElements),a(window).resize(function(b){e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()},d.checkElements()}),this.checkElements(),this}}(jQuery);
